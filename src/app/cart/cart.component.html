@@ -1,0 +1,18 @@
+<div class="cart--item-list-container">
+    <ul class="item-list cart--item-list">
+      <ng-container *ngFor="let item of cartItems$ | async">
+        <li>
+          <img
+            class="cart--item-icon"
+            src="assets/icons/{{ item.id }}.svg"
+            alt="beetroot"
+          />
+          <p>{{item.name}}</p>
+          <button class="quantity-btn remove-btn center" (click)="removeItem(item)">-</button>
+          <span class="quantity-text center">{{ item.quantity }}</span>
+          <button class="quantity-btn add-btn center" (click)="addToCart(item)">+</button>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+
